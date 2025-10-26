@@ -10,3 +10,20 @@ subnet3 = ["10.0.3.0/24"]
 subnet4 = ["10.0.4.0/24"]
 subnet5 = ["10.0.5.0/24"]
 }
+
+acrs = {
+  "acr1" = {
+    name                = "containerRegistry1"
+    location            = "central india"
+    resource_group_name = "milaznonprod-rg"
+    sku                 = "Premium"
+    
+  }
+  "acr2" = {
+    name                = "containerRegistry2"
+    location            = "central india"
+    resource_group_name = "milaznonprod-rg"
+    sku                 = "Premium"
+    
+  }
+}

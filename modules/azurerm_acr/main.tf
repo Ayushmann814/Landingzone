@@ -1,8 +1,9 @@
 resource "azurerm_container_registry" "acr" {
-  name                = "containerRegistry1"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  sku                 = "Premium"
+  for_each = var.acrs
+  name                = each.value.name
+  resource_group_name = each.value.resource_group_name
+  location            = each.value.location
+  sku                 = each.value.sku
   admin_enabled       = true
   georeplications {
     location                = "East US"
