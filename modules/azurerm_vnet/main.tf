@@ -8,8 +8,8 @@ resource "azurerm_virtual_network" "vnet-tf" {
  dynamic "subnet" {
     for_each = var.subnets
     content {
-      name           = subnet.key   
-      address_prefixes = subnet.value
+      name           = subnet.value.name
+      address_prefixes = subnet.value.address_prefixes
     }
    
  }

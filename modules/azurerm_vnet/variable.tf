@@ -15,6 +15,11 @@ variable "location" {
 
 variable "subnets" {
   description = "A map of subnets to create within the Virtual Network."
-  type = map(list(string))
+  type = map(object({
+
+  name = string
+  address_prefixes = list(string)
+  
+ } ))
   
 }

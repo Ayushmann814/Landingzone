@@ -11,23 +11,26 @@ variable "location" {
 variable "vnet_name" {
   description = "The name of the Virtual Network."
   type        = string
-  
+
 }
 
 
 variable "subnets" {
   description = "A map of subnets to create within the Virtual Network."
-  type = map(list(string))
-  
+  type        = map(object({
+    name             = string
+    address_prefixes = list(string)
+  })) 
+
 }
 
 variable "acrs" {
   description = "value"
-  type        = map(object({
-    name = string
-    location = string
+  type = map(object({
+    name                = string
+    location            = string
     resource_group_name = string
-    sku  = string
+    sku                 = string
 
   }))
 }
