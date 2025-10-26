@@ -36,3 +36,17 @@ acrs = {
     
   }
 }
+
+ddos_protection_plan = {
+  id = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Network/ddosProtectionPlans/myDdosPlan"
+}
+
+dns_servers = [ "10.0.8.1" , "10.0.8.3 "] 
+
+ip_address_pool = {
+  ip_add_pool1 = {
+    id = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Network/ipAddressPools/myIpPool"
+    number_of_ip_addresses = 5
+    
+  }
+}

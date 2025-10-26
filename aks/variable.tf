@@ -14,7 +14,14 @@ variable "vnet_name" {
 
 }
 
-
+variable "ddos_protection_plan" {
+  description = "The DDoS Protection Plan to associate with the Virtual Network."
+  type = object({
+    id = string
+  })
+  
+  
+}
 variable "subnets" {
   description = "A map of subnets to create within the Virtual Network."
   type        = map(object({
@@ -22,6 +29,13 @@ variable "subnets" {
     address_prefixes = list(string)
   })) 
 
+}
+
+variable "dns_servers" {
+  description = "A list of DNS servers IP addresses."
+  type        = list(string)
+  default     = []
+  
 }
 
 variable "acrs" {
@@ -33,4 +47,13 @@ variable "acrs" {
     sku                 = string
 
   }))
+}
+
+variable "ip_address_pool" {
+  description = "A map of IP address pools to associate with the Virtual Network."
+  type = map(object({
+    id = string
+    number_of_ip_addresses = number
+  }))
+  default = {}
 }
