@@ -1,7 +1,8 @@
 resource "azurerm_virtual_network" "vnet-tf" {
-  name                = var.vnet_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  for_each = var.virtual_network
+  name                = each.value.name
+  location            = each.value.location
+  resource_group_name = each.value.resource_group_name
   address_space       = ["10.0.0.0/16"]
 
 

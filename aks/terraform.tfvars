@@ -4,8 +4,21 @@ resource_group_name = {
     name     = "milaznonprod-rg"
     location = "central india"
   }
+  "rg2" = {
+  name = "milazprod-rg"
+  location = "central india"
 }
-vnet_name = "myVnet"
+}
+
+
+virtual_network = {
+  vnet_1 = {
+    name = "milazvnetprod"
+    location = "central india"
+    resource_group_name = "milazprod-rg"
+    address_space = ["10.0.0.0/16"]
+  }
+}
 
 subnets =  {
   s1 = {

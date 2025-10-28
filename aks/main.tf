@@ -20,10 +20,8 @@ module "resource_group" {
 
 module "vnet" {
   source = "../modules/azurerm_vnet"
-    vnet_name           = "myVNet"
+    virtual_network         = var.virtual_network
   subnets = var.subnets
-  location            = var.location
-  resource_group_name = var.resource_group_name["rg1"].name
   ddos_protection_plan = var.ddos_protection_plan
   dns_servers = var.dns_servers
   ip_address_pool = var.ip_address_pool

@@ -11,11 +11,16 @@ variable "location" {
   type        = string
 }
 
-variable "vnet_name" {
-  description = "The name of the Virtual Network."
-  type        = string
+variable "virtual_network" {
+  type = map(object({
+    name = string
+    location = string
+    resource_group_name = string  
+    address_space = list(string)
+  }))
+} 
+  
 
-}
 
 variable "ddos_protection_plan" {
   description = "The DDoS Protection Plan to associate with the Virtual Network."
