@@ -1,5 +1,10 @@
 location = "central india"
-resource_group_name = "myResourceGroup"
+resource_group_name = {
+  "rg1" = {
+    name     = "milaznonprod-rg"
+    location = "central india"
+  }
+}
 vnet_name = "myVnet"
 
 subnets =  {

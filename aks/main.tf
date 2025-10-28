@@ -15,8 +15,6 @@ module "acr" {
 
 module "resource_group" {
   source = "../modules/azurerm_resource_group"
- 
-  location            = var.location
   resource_group_name = var.resource_group_name
 }
 
@@ -25,7 +23,7 @@ module "vnet" {
     vnet_name           = "myVNet"
   subnets = var.subnets
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = var.resource_group_name["rg1"].name
   ddos_protection_plan = var.ddos_protection_plan
   dns_servers = var.dns_servers
   ip_address_pool = var.ip_address_pool
