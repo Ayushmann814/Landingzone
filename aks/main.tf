@@ -7,6 +7,7 @@
 # }
 
 module "acr" {
+  depends_on = [ module.resource_group ]
   source = "../modules/azurerm_acr"
   acrs  = var.acrs
 }
@@ -19,6 +20,7 @@ module "resource_group" {
 }
 
 module "vnet" {
+  depends_on = [ module.resource_group ]
   source = "../modules/azurerm_vnet"
     virtual_network         = var.virtual_network
   subnets = var.subnets

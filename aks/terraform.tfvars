@@ -40,14 +40,14 @@ subnets =  {
 }
 acrs = {
   "acr1" = {
-    name                = "containerRegistry1"
+    name                = "ayushacr3758"
     location            = "central india"
     resource_group_name = "milaznonprod-rg"
     sku                 = "Premium"
     
   }
   "acr2" = {
-    name                = "containerRegistry2"
+    name                = "ayushacr274248"
     location            = "central india"
     resource_group_name = "milaznonprod-rg"
     sku                 = "Premium"
